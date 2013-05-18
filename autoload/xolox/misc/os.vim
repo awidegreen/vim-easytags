@@ -38,7 +38,7 @@ function! xolox#misc#os#exec(options) " {{{1
     if !async
       let tempout = tempname()
       let temperr = tempname()
-      let cmd = printf('(%s) 1>%s 2>%s', cmd,
+      let cmd = printf('sh -c "(%s) 1>%s 2>%s"', cmd,
             \ xolox#misc#escape#shell(tempout),
             \ xolox#misc#escape#shell(temperr))
     endif
